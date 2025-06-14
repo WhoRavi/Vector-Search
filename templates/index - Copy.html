@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie/TV Show Library!</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="top-nav">
+        <a href="/" class="home-button">Home</a>
+    </div>
+    <h1>Search Movie / TV Show</h1>
+    <div class="search-container">
+        <form method="POST">
+            <input type="text" name="query" placeholder="Enter your search query" required>
+            <button type="submit" class="search-button">Search</button>
+        </form>
+    </div>
+    <hr>
+    {% if results %}
+        <!-- Generated text from RAG process -->
+        {% if generated_text %}
+        <hr>
+        <h2>Generated Answer</h2>
+        <p>{{ generated_text }}</p>
+        {% endif %}
+        <h2>Search Results for "{{ query }}":</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Score</th>
+                    <th>Type</th>
+                    <th>Title</th>
+                    <th>Director</th>
+                    <th>Actors</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for result in results %}
+                <tr>
+                    <td>{{ result['Score'] }}</td>
+                    <td>{{ result['Type'] }}</td>
+                    <td>{{ result['Title'] }}</td>
+                    <td>{{ result['Director'] }}</td>
+                    <td>{{ result['Actors'] }}</td>
+                    <td>{{ result['Description'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    {% endif %}
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+</body>
+</html>
