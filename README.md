@@ -1,23 +1,35 @@
-# Vector-Search
+# 🎯 Purpose
 
-This project is a Flask-based web application for vector search and reranking, using Pinecone for vector database operations. It is designed to work with Netflix titles data and embeddings.
+This app is a vector search tool for Netflix titles. It enables users to search for similar movies or shows using vector embeddings, making content discovery smarter and more intuitive.
 
-## Features
-- Upload and embed Netflix titles
-- Vector search using Pinecone
-- Reranking of search results
-- Simple web interface
+---
 
-## Project Structure
-- `app.py`: Main Flask application
-- `reranking.py`: Reranking logic
-- `embed_upload.ipynb`: Jupyter notebook for embedding and uploading data
-- `data/`: Contains Netflix CSV data and embeddings
-- `static/`: Static files (CSS, favicon)
-- `templates/`: HTML templates
-- `requirements.txt`: Python dependencies
+## 🚀 Features
 
-## Setup
+- 🔍 Search Netflix titles using vector similarity
+- 📊 Uses OpenAI for embeddings and Pinecone for vector search
+- 🖥️ Simple web interface for easy interaction
+
+---
+
+## 🗂️ Project Structure
+
+- `app.py` — Main Flask application
+- `embed_upload.ipynb` — Jupyter notebook for embedding and uploading data
+- `requirements.txt` — Python dependencies
+- `data/` — Contains Netflix CSV data and embeddings
+  - `netflix_titles.csv`
+  - `netflix_titles_embedding.csv`
+- `static/` — Static files (CSS, favicon)
+  - `style.css`
+  - `favicon.png`
+- `templates/` — HTML templates
+  - `index.html`
+
+---
+
+## 🛠️ Installation
+
 1. Clone the repository and navigate to the project directory.
 2. (Recommended) Create and activate a virtual environment:
    ```
@@ -26,19 +38,36 @@ This project is a Flask-based web application for vector search and reranking, u
    ```
 3. Install dependencies:
    ```
-   uv pip install -r requirements.txt
+   pip install -r requirements.txt
    ```
 
-## Usage
+---
+
+## ▶️ Usage
+
 1. Run the Flask app:
    ```
    python app.py
    ```
 2. Open your browser and go to `http://127.0.0.1:5000/`.
 
-## Notes
-- Make sure you have valid Pinecone and OpenAI API keys set as environment variables if required by your code.
-- For more details, see the code and comments in each file.
+---
 
-## License
-This project is for educational purposes.
+## 📁 Data Files
+
+- `data/netflix_titles.csv` — Raw Netflix titles data
+- `data/netflix_titles_embedding.csv` — Embeddings for Netflix titles
+
+---
+
+## 🎨 Static & Templates
+
+- `static/style.css` — App styling
+- `static/favicon.png` — App icon
+- `templates/index.html` — Main HTML template
+
+---
+
+## 🔑 Notes
+
+- Make sure you have valid Pinecone and OpenAI API keys set as environment variables if required by your code.

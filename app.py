@@ -11,8 +11,7 @@ client = OpenAI(api_key = os.getenv('OPENAI_API_KEY'))
 cloud = os.environ.get('PINECONE_CLOUD') or 'aws'
 region = os.environ.get('PINECONE_REGION') or 'us-east-1'
 spec = ServerlessSpec(cloud = cloud, region=region)
-# pc = Pinecone(api_key = os.getenv('PINECONE_API_KEY'))
-pc = Pinecone(api_key="pcsk_2WLBPp_7jYrW8HoW1CdWnKeK6GUvbSQHB6K28rMzXXByPrcH7HRwoz7XquKgYaM6Zz2hqn")
+pc = Pinecone(api_key = os.getenv('PINECONE_API_KEY'))
  
 
 # dataset = pd.read_excel('netflix_titles_embeddings.xlsx')
